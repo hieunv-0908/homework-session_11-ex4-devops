@@ -16,6 +16,8 @@ jobs:
       - name: Đăng nhập Docker Registry
         uses: docker/login-action@v3
         with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
           password: ${{ secrets.REGISTRY_TOKEN }}
 
       - name: Thiết lập môi trường Java JDK 17
